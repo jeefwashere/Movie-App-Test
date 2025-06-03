@@ -1,6 +1,6 @@
 const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=cc8acb41310d175d536d3b46b2c3a9ca&page=1';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-const SEARCHAPI = 'https://api.themoviedb.org/3/search/movie?&api_key=cc8acb41310d175d536d3b46b2c3a9ca&query="';
+const SEARCHAPI = 'https://api.themoviedb.org/3/search/movie?&api_key=cc8acb41310d175d536d3b46b2c3a9ca&query=';
 
 const main = document.getElementById('section');
 const form = document.getElementById('form');
@@ -23,13 +23,11 @@ function returnMovies(APILINK) {
                 div_column.setAttribute('class', 'column');
 
                 const image = document.createElement('img');
-                image.setAttribute('class', 'src');
+                image.setAttribute('class', 'thumbnail');
                 image.setAttribute('id', 'image');
 
                 const title = document.createElement('h3');
                 title.setAttribute('id', 'title');
-
-                const center = document.createElement('center');
 
                 title.innerHTML = `${element.title}`;
                 image.src = IMG_PATH + element.poster_path;
